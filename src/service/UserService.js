@@ -9,6 +9,10 @@ class UserService {
     return axios.post(USER_API_URL + "/apply", data);
   }
 
+  static getId() {
+    return axios.get(USER_API_URL + "/login/");
+  }
+
   static getAccountNumber(userid) {
     return axios.get(USER_API_URL + "/getacno/" + userid);
   }

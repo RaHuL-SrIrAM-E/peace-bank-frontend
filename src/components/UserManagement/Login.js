@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthenticationService from "../../service/AuthenticationService";
 import UserService from "../../service/UserService";
+import Hero from "./Hero";
+import { MenuItems } from "./menuItems";
+import axios from "axios"
 
 function UserLogin() {
   const history = useNavigate();
@@ -44,9 +47,10 @@ function UserLogin() {
         });
     } else {
       AuthenticationService.login(username, password)
+      axios.get("http://localhost:8080/api/login")
         .then((response) => {
           if (response.data) {
-            UserService.getAccountNumber(username).then((response) => {
+            UserService.getId().then((response) => {;
               AuthenticationService.registerSuccessfulLogin(response.data);
             });
             AuthenticationService.setAdminMode(false);
@@ -65,6 +69,13 @@ function UserLogin() {
   return (
     <>
       <div>
+      <Hero 
+       cName="hero" 
+       heroImg="https://getwallpapers.com/wallpaper/full/d/7/1/328129.jpg"
+       title="User Login"
+       text="Greetings!!!, Glad to be at your service."
+       url="/login"
+       />
         <div className="d-flex justify-content-end mb-3">
           {/* Toggle buttons */}
           <button
