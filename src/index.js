@@ -10,11 +10,6 @@ const root = createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={ <App /> }>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+      <App />
   </React.StrictMode>,
 );

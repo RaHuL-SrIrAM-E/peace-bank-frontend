@@ -3,7 +3,7 @@ import AuthenticationService from "./AuthenticationService";
 import API_URLS from "../utils/ApiUrls";
 
 const BENEFICIARIES_REST_API_URL =
-  "http://localhost:8080/peacebank/"; //check
+  "http://localhost:8080/obs/api/payee"; //check id needs to bee added same link for to post and get
 
 class BeneficiaryService {
   static getBeneficiaries() {

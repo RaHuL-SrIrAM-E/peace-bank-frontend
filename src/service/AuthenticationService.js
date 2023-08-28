@@ -1,7 +1,7 @@
 import axios from "axios";
 import UserService from "./UserService";
 
-const AUTH_API_URL = "http://localhost:8080/peacebankk/api/"; //check
+const AUTH_API_URL = "http://localhost:8080/api/login"; //check
 export const ACCOUNT_NUMBER_SESSION_ATTRIBUTE_NAME = "authenticatedUser";
 export const ACCOUNT_NAME_SESSION_ATTRIBUTE_NAME = "accountName";
 export const ADMIN_MODE_SESSION_ATTRIBUTE_NAME = "isAdminMode";

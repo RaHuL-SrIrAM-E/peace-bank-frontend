@@ -20,7 +20,7 @@ function NetBankingRegistration() {
 
     // Send POST request using axios
     axios
-      .post("http://localhost:8080/obs/api", data) //check
+      .post("http://localhost:8080/obs/api/account", data) //check
       .then((response) => {
         console.log("Registration successful:", response.data);
         alert("Registration successful");

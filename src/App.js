@@ -2,7 +2,7 @@
 import Home from "./components/UserManagement/HomePage";
 import Contact from "./components/UserManagement/Contact";
 import "./App.css";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import UserLogin from "./components/UserManagement/Login";
 import NetBankingRegistration from "./components/UserManagement/Registration";
 import ApplyOnline from "./components/UserManagement/Apply";
@@ -17,15 +17,14 @@ import AccountConfirmation from "./components/UserManagement/Confirmation";
 
 function App() {
   return (
-    <BrowserRouter>
-
+    
     <div className="d-flex flex-column min-vh-100">
-      <Navbar />
+
       <section className="container-fluid flex-grow-1">
-        <Link to="/">Home</Link>
-        <Link to="/contact">Contact</Link>
+      <Router>
+      <Navbar />
           <Routes>
-            <Route path="/" Component={Home} exact />
+            <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
             <Route
               path="/login"
@@ -104,10 +103,13 @@ function App() {
               element={<AccountConfirmation />}
             />
           </Routes>
-      </section>
+          </Router>
+            </section>
+      
+
       <Footer />
     </div>
-    </BrowserRouter>
+
 
   );
 }

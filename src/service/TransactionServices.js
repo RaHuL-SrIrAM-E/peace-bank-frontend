@@ -3,7 +3,7 @@ import AuthenticationService from "./AuthenticationService";
 import API_URLS from "../utils/ApiUrls";
 
 const TRANSACTIONS_REST_API_URL =
-  "http://localhost:8080/peacebank/"; //check
+  "http://localhost:8080/obs/api/transaction"; //check //id needs to be added 
 
 const ADMIN_TRANSACTIONS_REST_API_URL =
   "http://localhost:8080/peacebank"; //check

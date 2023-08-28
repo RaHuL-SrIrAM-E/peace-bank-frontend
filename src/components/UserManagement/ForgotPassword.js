@@ -25,7 +25,7 @@ function ForgotPassword() {
 
     // Send POST request using axios
     axios
-      .post("http://localhost:8080/peacebank/", data) //check
+      .post("http://localhost:8080/obs/api/forgot-password", data) //check
       .then((response) => {
         console.log("Reset Password successful:", response.data);
         if (response.data) {

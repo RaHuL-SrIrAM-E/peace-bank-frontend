@@ -99,14 +99,14 @@ function ApplyOnline() {
     }
 
     axios
-      .post("http://localhost:8080/obs/api", data) //check
+      .post("http://localhost:8080/obs/api/register", data) //check
       .then((response) => {
         console.log("Account Number:", response.data);
         alert("Registration successful");
         if (response.data) {
           setTimeout(() => {
             history("/");
-          }, 2000);
+          }, 5000);
         }
       })
       .catch((error) => {
