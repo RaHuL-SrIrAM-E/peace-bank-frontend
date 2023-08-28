@@ -2,7 +2,7 @@ import axios from "axios";
 import AuthenticationService from "./AuthenticationService";
 import API_URLS from "../utils/ApiUrls";
 
-const USER_API_URL = "http://localhost:8080/peacebank/"; //check
+const USER_API_URL = "http://localhost:8080/obs/api"; //check
 
 class UserService {
   static apply(data) {

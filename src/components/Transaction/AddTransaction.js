@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthenticationService from "../../service/AuthenticationService";
-import BeneficiaryService from "../../service/BeneficiaryService";
-import TransactionService from "../../service/TransactionService";
+import BeneficiaryService from "../../service/BeneficiaryServices";
+import TransactionService from "../../service/TransactionServices";
 
 function AddTransaction() {
   const history = useNavigate();

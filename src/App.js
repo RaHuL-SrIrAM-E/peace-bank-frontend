@@ -1,9 +1,8 @@
-import { Route, Routes } from "react-router-dom";
+//import { Route, Routes } from "react-router-dom";
 import Home from "./components/UserManagement/HomePage";
 import Contact from "./components/UserManagement/Contact";
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import UserLogin from "./components/UserManagement/Login";
 import NetBankingRegistration from "./components/UserManagement/Registration";
 import ApplyOnline from "./components/UserManagement/Apply";
@@ -18,17 +17,20 @@ import AccountConfirmation from "./components/UserManagement/Confirmation";
 
 function App() {
   return (
+    <BrowserRouter>
+
     <div className="d-flex flex-column min-vh-100">
       <Navbar />
       <section className="container-fluid flex-grow-1">
-        <BrowserRouter>
+        <Link to="/">Home</Link>
+        <Link to="/contact">Contact</Link>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" Component={Home} exact />
             <Route path="/contact" element={<Contact />} />
             <Route
               path="/login"
-              element={<FormTemplate children={<UserLogin />} />}
-            />
+              element={<UserLogin />} />
+
             <Route
               path="/register"
               element={<FormTemplate children={<NetBankingRegistration />} />}
@@ -102,10 +104,11 @@ function App() {
               element={<AccountConfirmation />}
             />
           </Routes>
-        </BrowserRouter>
       </section>
       <Footer />
     </div>
+    </BrowserRouter>
+
   );
 }
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import BeneficiaryService from "../../service/BeneficiaryService";
+import BeneficiaryService from "../../service/BeneficiaryServices";
 import { ParseText } from "../../utils/Text";
 import AuthenticationService from "../../service/AuthenticationService";
 import DisplayTable from "./DisplayTable";

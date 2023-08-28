@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import AddressForm from "./Address";
 import UserService from "../../service/UserService";
 import FormInput from "../../utils/FormInput";
-
+import axios from "axios"
 function ApplyOnline() {
   const history = useNavigate();
   const [firstName, setFirstName] = useState("");
@@ -98,19 +98,19 @@ function ApplyOnline() {
       return;
     }
 
-    UserService.apply(data)
+    axios
+      .post("http://localhost:8080/obs/api", data) //check
       .then((response) => {
-        if (response.status === 200) {
+        console.log("Account Number:", response.data);
+        alert("Registration successful");
+        if (response.data) {
           setTimeout(() => {
-            history("/accountconfirm/success");
+            history("/");
           }, 2000);
         }
       })
       .catch((error) => {
         console.error("Registration failed:", error, data);
-        setTimeout(() => {
-          history("/accountconfirm/failure");
-        }, 2000);
       });
   };
 

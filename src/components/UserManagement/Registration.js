@@ -7,7 +7,6 @@ function NetBankingRegistration() {
   const [accountNumber, setAccountNumber] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [transactionPassword, setTransactionPassword] = useState("");
-  const [otp, setOtp] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -16,12 +15,12 @@ function NetBankingRegistration() {
       accountnumber: accountNumber,
       loginpassword: loginPassword,
       transactionpassword: transactionPassword,
-      otp: otp,
+
     };
 
     // Send POST request using axios
     axios
-      .post("http://localhost:8080/peacebank/", data) //check
+      .post("http://localhost:8080/obs/api", data) //check
       .then((response) => {
         console.log("Registration successful:", response.data);
         alert("Registration successful");
@@ -40,7 +39,6 @@ function NetBankingRegistration() {
     console.log("Account Number:", accountNumber);
     console.log("Login Password:", loginPassword);
     console.log("Transaction Password:", transactionPassword);
-    console.log("OTP:", otp);
   };
 
   return (
@@ -77,17 +75,6 @@ function NetBankingRegistration() {
             id="transactionPassword"
             value={transactionPassword}
             onChange={(e) => setTransactionPassword(e.target.value)}
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="otp">OTP:</label>
-          <input
-            type="text"
-            className="form-control"
-            id="otp"
-            value={otp}
-            onChange={(e) => setOtp(e.target.value)}
           />
         </div>
 

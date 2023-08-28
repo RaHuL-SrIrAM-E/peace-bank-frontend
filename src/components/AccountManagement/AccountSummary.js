@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TransactionService from "../../service/TransactionService";
+import TransactionService from "../../service/TransactionServices";
 import DisplayTable from "../Transaction/DisplayTable";
 import TransactionColumns from "../Transaction/TransactionColumn";
 
